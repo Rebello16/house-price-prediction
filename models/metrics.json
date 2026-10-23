@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "random_state": 42,
+    "n_train": 1166,
+    "n_test": 292,
+    "test_size": 0.2,
+    "cv_folds": 5,
+    "optuna_trials": 60,
+    "best_model": "XGBoost (tuned)",
+    "train_minutes": 20.1
+  },
+  "models": {
+    "Linear Regression": {
+      "cv": {
+        "rmse": 24420.098782329394,
+        "rmsle": 0.15437672217574352,
+        "mae": 15566.350794119577,
+        "r2": 0.903427049919029,
+        "rmsle_std": 0.05107028140203198
+      },
+      "test": {
+        "rmse": 22740.685422472554,
+        "rmsle": 0.13118541572846315,
+        "mae": 15492.208705225952,
+        "r2": 0.9063786570319577
+      }
+    },
+    "Ridge": {
+      "cv": {
+        "rmse": 23407.142578686377,
+        "rmsle": 0.1179304759719598,
+        "mae": 14756.251926178029,
+        "r2": 0.914216118332639,
+        "rmsle_std": 0.01149890825295487
+      },
+      "test": {
+        "rmse": 21668.776374630204,
+        "rmsle": 0.11980168084500903,
+        "mae": 15098.433005489422,
+        "r2": 0.9149965523083474
+      }
+    },
+    "Random Forest": {
+      "cv": {
+        "rmse": 26848.61676688144,
+        "rmsle": 0.1348538903793413,
+        "mae": 16829.741706993114,
+        "r2": 0.8870969850003512,
+        "rmsle_std": 0.013042737431771445
+      },
+      "test": {
+        "rmse": 23273.529841848893,
+        "rmsle": 0.1434952459945657,
+        "mae": 16133.943530012899,
+        "r2": 0.9019399119193418
+      }
+    },
+    "XGBoost (default)": {
+      "cv": {
+        "rmse": 26617.416913412213,
+        "rmsle": 0.13503521835754762,
+        "mae": 17131.614043958172,
+        "r2": 0.8891805686613914,
+        "rmsle_std": 0.01092682610574346
+      },
+      "test": {
+        "rmse": 23099.937493544563,
+        "rmsle": 0.14262739589206633,
+        "mae": 16526.850385273974,
+        "r2": 0.9033972755021958
+      }
+    },
+    "LightGBM (default)": {
+      "cv": {
+        "rmse": 25730.872882471416,
+        "rmsle": 0.12627553375717823,
+        "mae": 15914.423903890001,
+        "r2": 0.8966698050668189,
+        "rmsle_std": 0.011371661736556361
+      },
+      "test": {
+        "rmse": 21932.075061144595,
+        "rmsle": 0.1344915778256985,
+        "mae": 15057.760876821705,
+        "r2": 0.9129182370387738
+      }
+    },
+    "XGBoost (tuned)": {
+      "cv": {
+        "rmse": 22607.615197321524,
+        "rmsle": 0.11223069923138222,
+        "mae": 13659.228394329353,
+        "r2": 0.9201852039410088,
+        "rmsle_std": 0.01211987407385945
+      },
+      "test": {
+        "rmse": 19264.380904972342,
+        "rmsle": 0.11405973304508513,
+        "mae": 14219.757264019692,
+        "r2": 0.9328141402405226
+      }
+    },
+    "LightGBM (tuned)": {
+      "cv": {
+        "rmse": 22570.626123261314,
+        "rmsle": 0.11341336293436936,
+        "mae": 13900.978386122995,
+        "r2": 0.9202695835712426,
+        "rmsle_std": 0.010688169874931312
+      },
+      "test": {
+        "rmse": 19280.58534271512,
+        "rmsle": 0.11910208564059317,
+        "mae": 14050.141506799404,
+        "r2": 0.9327010645100727
+      }
+    }
+  },
+  "best_params": {
+    "XGBoost": {
+      "n_estimators": 1300,
+      "learning_rate": 0.030032292159129264,
+      "max_depth": 2,
+      "min_child_weight": 2,
+      "subsample": 0.8244025393663115,
+      "colsample_bytree": 0.5427355670718614,
+      "reg_alpha": 0.09642234099774102,
+      "reg_lambda": 0.004472729508087609
+    },
+    "LightGBM": {
+      "n_estimators": 600,
+      "learning_rate": 0.025087928534468548,
+      "num_leaves": 6,
+      "min_child_samples": 6,
+      "subsample": 0.7239192603339822,
+      "colsample_bytree": 0.35120612345305735,
+      "reg_alpha": 0.0076274759602946215,
+      "reg_lambda": 0.03191815618870814
+    }
+  },
+  "prediction_interval": {
+    "level": 0.8,
+    "lower_log": -0.11643692191438504,
+    "upper_log": 0.11323200777146791
+  },
+  "evaluation": {
+    "test": {
+      "rmse": 19264.380904972342,
+      "rmsle": 0.11405973304508513,
+      "mae": 14219.757264019692,
+      "r2": 0.9328141402405226
+    },
+    "interval_coverage_test": 0.7876712328767124,
+    "error_by_price_band": [
+      {
+        "band": "< $100k",
+        "n": 21,
+        "mape": 20.8099,
+        "bias": 18.1779,
+        "rmsle": 0.2422
+      },
+      {
+        "band": "$100-150k",
+        "n": 104,
+        "mape": 7.2264,
+        "bias": -0.3457,
+        "rmsle": 0.1009
+      },
+      {
+        "band": "$150-200k",
+        "n": 78,
+        "mape": 6.7288,
+        "bias": 1.2888,
+        "rmsle": 0.0825
+      },
+      {
+        "band": "$200-300k",
+        "n": 66,
+        "mape": 8.6015,
+        "bias": -0.3246,
+        "rmsle": 0.1052
+      },
+      {
+        "band": "> $300k",
+        "n": 23,
+        "mape": 7.8876,
+        "bias": -3.971,
+        "rmsle": 0.1032
+      }
+    ],
+    "rmsle_by_sale_condition": [
+      {
+        "cond": "Abnorml",
+        "size": 27,
+        "rmsle": 0.1601
+      },
+      {
+        "cond": "AdjLand",
+        "size": 1,
+        "rmsle": 0.0707
+      },
+      {
+        "cond": "Alloca",
+        "size": 3,
+        "rmsle": 0.192
+      },
+      {
+        "cond": "Family",
+        "size": 2,
+        "rmsle": 0.06
+      },
+      {
+        "cond": "Normal",
+        "size": 230,
+        "rmsle": 0.109
+      },
+      {
+        "cond": "Partial",
+        "size": 29,
+        "rmsle": 0.0933
+      }
+    ],
+    "worst_10": [
+      {
+        "Neighborhood": "IDOTRR",
+        "OverallQual": 4,
+        "GrLivArea": 1317,
+        "YearBuilt": 1920,
+        "SaleCondition": "Normal",
+        "actual": 40000.0,
+        "predicted": 76105.0,
+        "pct_error": 90.3
+      },
+      {
+        "Neighborhood": "OldTown",
+        "OverallQual": 4,
+        "GrLivArea": 968,
+        "YearBuilt": 1927,
+        "SaleCondition": "Normal",
+        "actual": 64500.0,
+        "predicted": 108083.0,
+        "pct_error": 67.6
+      },
+      {
+        "Neighborhood": "BrkSide",
+        "OverallQual": 1,
+        "GrLivArea": 334,
+        "YearBuilt": 1946,
+        "SaleCondition": "Normal",
+        "actual": 39300.0,
+        "predicted": 57750.0,
+        "pct_error": 46.9
+      },
+      {
+        "Neighborhood": "IDOTRR",
+        "OverallQual": 4,
+        "GrLivArea": 1178,
+        "YearBuilt": 1900,
+        "SaleCondition": "Abnorml",
+        "actual": 102776.0,
+        "predicted": 70457.0,
+        "pct_error": -31.4
+      },
+      {
+        "Neighborhood": "IDOTRR",
+        "OverallQual": 2,
+        "GrLivArea": 480,
+        "YearBuilt": 1949,
+        "SaleCondition": "Abnorml",
+        "actual": 35311.0,
+        "predicted": 50983.0,
+        "pct_error": 44.4
+      },
+      {
+        "Neighborhood": "Crawfor",
+        "OverallQual": 7,
+        "GrLivArea": 1954,
+        "YearBuilt": 1939,
+        "SaleCondition": "Normal",
+        "actual": 311500.0,
+        "predicted": 230488.0,
+        "pct_error": -26.0
+      },
+      {
+        "Neighborhood": "Gilbert",
+        "OverallQual": 4,
+        "GrLivArea": 864,
+        "YearBuilt": 1951,
+        "SaleCondition": "Normal",
+        "actual": 141000.0,
+        "predicted": 104471.0,
+        "pct_error": -25.9
+      },
+      {
+        "Neighborhood": "Edwards",
+        "OverallQual": 4,
+        "GrLivArea": 960,
+        "YearBuilt": 1956,
+        "SaleCondition": "Abnorml",
+        "actual": 112000.0,
+        "predicted": 85697.0,
+        "pct_error": -23.5
+      },
+      {
+        "Neighborhood": "CollgCr",
+        "OverallQual": 8,
+        "GrLivArea": 2574,
+        "YearBuilt": 2007,
+        "SaleCondition": "Partial",
+        "actual": 276000.0,
+        "predicted": 357587.0,
+        "pct_error": 29.6
+      },
+      {
+        "Neighborhood": "OldTown",
+        "OverallQual": 4,
+        "GrLivArea": 1131,
+        "YearBuilt": 1937,
+        "SaleCondition": "Alloca",
+        "actual": 89471.0,
+        "predicted": 115349.0,
+        "pct_error": 28.9
+      }
+    ],
+    "importance_top20": {
+      "TotalSF": 0.10440000146627426,
+      "OverallQual": 0.0738999992609024,
+      "TotalBathrooms": 0.03620000183582306,
+      "OverallCond": 0.022700000554323196,
+      "HouseAge": 0.02239999920129776,
+      "LotArea": 0.018300000578165054,
+      "KitchenQual": 0.017999999225139618,
+      "YearRemodAdd": 0.016499999910593033,
+      "GrLivArea": 0.015200000256299973,
+      "GarageFinish": 0.015200000256299973,
+      "FireplaceQu": 0.013399999588727951,
+      "GarageArea": 0.01209999993443489,
+      "BsmtUnfSF": 0.011800000444054604,
+      "Neighborhood": 0.011599999852478504,
+      "GarageCars": 0.011599999852478504,
+      "MSZoning": 0.010900000110268593,
+      "YearBuilt": 0.010599999688565731,
+      "SaleCondition": 0.00839999970048666,
+      "YearsSinceRemodel": 0.008200000040233135,
+      "PorchSF": 0.007799999788403511
+    },
+    "share_of_test_houses_within_10pct": 0.7568493150684932
+  }
+}
